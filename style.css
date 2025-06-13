@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe6f0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d63384;
+}
+
+h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.heart {
+  position: absolute;
+  top: -50px;
+  color: #ff4d88;
+  font-size: 2rem;
+  animation: fall linear;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
