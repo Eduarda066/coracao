@@ -1,3 +1,6 @@
+let raining = true;
+let rainInterval;
+
 function createHeart() {
   const heart = document.createElement('div');
   heart.classList.add('heart');
@@ -14,4 +17,31 @@ function createHeart() {
   }, 5000);
 }
 
-setInterval(createHeart, 200);
+function startRain() {
+  rainInterval = setInterval(createHeart, 200);
+}
+
+function stopRain() {
+  clearInterval(rainInterval);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  startRain();
+
+  document.getElementById('toggle-rain').addEventListener('click', () => {
+    if (raining) {
+      stopRain();
+      document.getElementById('toggle-rain').textContent = "Iniciar a chuva";
+    } else {
+      startRain();
+      document.getElementById('toggle-rain').textContent = "Parar a chuva";
+    }
+    raining = !raining;
+  });
+
+  document.getElementById('burst').addEventListener('click', () => {
+    for (let i = 0; i < 30; i++) {
+      setTimeout(createHeart, i * 50);
+    }
+  });
+});

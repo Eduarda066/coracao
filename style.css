@@ -11,16 +11,38 @@ body {
   position: relative;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: #d63384;
+  text-align: center;
 }
 
 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
   position: relative;
   z-index: 2;
-  font-size: 2rem;
-  text-align: center;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #ff4d88;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e63971;
 }
 
 .heart {
@@ -30,6 +52,8 @@ h1 {
   font-size: 2rem;
   animation: fall linear;
   opacity: 0.8;
+  user-select: none;
+  pointer-events: none;
 }
 
 @keyframes fall {
